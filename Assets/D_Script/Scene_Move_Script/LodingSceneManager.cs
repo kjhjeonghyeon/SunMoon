@@ -35,7 +35,11 @@ public class LodingSceneManager : MonoBehaviour
     void Start()
     {
 
+      
+
         StartCoroutine("LoadScene");
+
+
 
     }
 
@@ -84,28 +88,46 @@ public class LodingSceneManager : MonoBehaviour
 
 
             barGage = nextSceneLoad.progress;
-           
+
 
 
             if (barGage < 0.8)
             {
-              
-                   
-                lodingBar.GetComponent<Slider>().value = barGage;
                 
+
+
+                lodingBar.GetComponent<Slider>().value = barGage;
+
 
 
             }
             else
-            {
+            {//처음씬으로 갈때만 오프닝씬을 보여준다
+                if (nextScene == 1)
+                {
+                  
 
-                
+                    lodingBar.GetComponent<Slider>().value = 0.8f;
+                    yield return new WaitForSeconds(0.5f);
+                    lodingBar.GetComponent<Slider>().value = 1f;
+                    yield return new WaitForSeconds(16f);
+                    nextSceneLoad.allowSceneActivation = true;
 
-                lodingBar.GetComponent<Slider>().value = 1;
-                yield return new WaitForSeconds(3f);
-                nextSceneLoad.allowSceneActivation = true;
+                }
+                else
+                {
+                    GameObject.Find("Roding_Image").GetComponent<Animator>().SetTrigger("GoRogo");
+                 
+;         
+                    lodingBar.GetComponent<Slider>().value = 1;
+                    yield return new WaitForSeconds(3f);
+                    nextSceneLoad.allowSceneActivation = true;
+
+                }
+
 
             }
+            
             yield return null;
         }
 

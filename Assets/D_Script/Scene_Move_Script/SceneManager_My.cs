@@ -29,9 +29,9 @@ public class SceneManager_My : MonoBehaviour
     public void LoadScene()
     {
         
-        SceneManager.LoadScene(0);
         PlayerPrefs.SetInt("next", next);
-        PlayerPrefs.Save();
+        SceneManager.LoadScene(0);
+   
 
         
    

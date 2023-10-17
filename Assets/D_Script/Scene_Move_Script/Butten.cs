@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class Butten : MonoBehaviour
+//버튼으로 이동할 씬을 정해주니 하이어라키에 적어주기
+public class Butten : SceneManager_My
 {
+    
+
    public int goScene = 0;
-    SceneManager_My sceneManager_My;
+    
     void Start()
     {
-        sceneManager_My=new SceneManager_My();  
+        
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class Butten : MonoBehaviour
         SceneManager_My.Next(goScene);
 
 
-        sceneManager_My.LoadScene();
+        LoadScene();
 
     }
 }
