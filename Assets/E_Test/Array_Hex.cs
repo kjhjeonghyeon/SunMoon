@@ -29,7 +29,7 @@ public class Array_Hex : MonoBehaviour
 
     bool mach(float a, float b)
     {
-        if (Mathf.Abs(b - a) < 25)
+        if (Mathf.Abs(b - a) < 50)
         {
             return true;
         }
@@ -113,7 +113,7 @@ public class Array_Hex : MonoBehaviour
         float anglet_opposite = Quaternion.FromToRotation(new Vector3(1, 0, 0), mouseDirecter_O - centerposition).eulerAngles.y;
         float angle = 360 - anglet_opposite;
         // float localAngle = angle;
-        Debug.Log(mousePoint);
+       // Debug.Log(mousePoint);
 
         mouse.transform.position = mousePointxz;
 
@@ -139,7 +139,7 @@ public class Array_Hex : MonoBehaviour
 
 
                 }
-
+                //가까이있는거랑 안겹치려고 순서이렇게 해놈
 
                 else if (p == 3)
                 {

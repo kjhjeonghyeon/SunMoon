@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/C_Scenes/1.StartScene_test.unity
     guid: 6ec4b73c48639bd4498f8069bf5a81ce
   - enabled: 1
-    path: Assets/C_Scenes/2.LobbyScene_test.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/C_Scenes/2.LobbyScene.unity
+    guid: 8b375263939092d45b68d1af61fd24d2
   - enabled: 1
     path: Assets/C_Scenes/3.SavingScenes.unity
     guid: bfccdc0cb8aea6e43a0e738c0f179d3e
