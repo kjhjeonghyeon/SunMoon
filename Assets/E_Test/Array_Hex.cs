@@ -7,7 +7,7 @@ public class Array_Hex : MonoBehaviour
 {
     float[] Direction = new float[12];
     float[] Direction_boundery = new float[12];
-    float Direction_patten = 777;// 각도 예외까지 합친 숫자 7
+    // float Direction_patten = 777;// 각도 예외까지 합친 숫자 7
 
     float subface = 0.5f;
     float dot = 0.58f;//삼각형계산기로 다시 해줌
@@ -55,7 +55,7 @@ public class Array_Hex : MonoBehaviour
         mouse = Instantiate(mouse, parentobj);
         centeObj = Instantiate(centeObj, parentobj);
 
-     
+
         //63.43f//26.57f
         Direction_boundery[0] = 0;
         Direction_boundery[3] = 180;
@@ -66,7 +66,7 @@ public class Array_Hex : MonoBehaviour
 
 
 
-        
+
 
 
 
@@ -90,17 +90,17 @@ public class Array_Hex : MonoBehaviour
 
         if (mousePoint.z > 0)
         {
-          mousePointxz = new Vector3(mousePoint.x, 0, mousePoint.z * ((mousePoint.z)/2f)*10f);//  z음의 방향으로는 안생성 
+            mousePointxz = new Vector3(mousePoint.x, 0, mousePoint.z * ((mousePoint.z) / 2f) * 10f);//  z음의 방향으로는 안생성 
 
         }
-       else if (mousePoint.z <0)
+        else if (mousePoint.z < 0)
         {
-          mousePointxz = new Vector3(mousePoint.x, 0, mousePoint.z*((mousePoint.z) / 2f) *-2f);//  z음의 방향으로는 안생성 
+            mousePointxz = new Vector3(mousePoint.x, 0, mousePoint.z * ((mousePoint.z) / 2f) * -2f);//  z음의 방향으로는 안생성 
 
         }
         else
         {
-            mousePointxz = new Vector3(mousePoint.x, 0, mousePoint.z );//  z음의 방향으로는 안생성 
+            mousePointxz = new Vector3(mousePoint.x, 0, mousePoint.z);//  z음의 방향으로는 안생성 
 
         }
         mouseDirecter = new Vector3(mousePointxz.x, 0, mousePointxz.z) - centerposition;
@@ -113,12 +113,12 @@ public class Array_Hex : MonoBehaviour
         float anglet_opposite = Quaternion.FromToRotation(new Vector3(1, 0, 0), mouseDirecter_O - centerposition).eulerAngles.y;
         float angle = 360 - anglet_opposite;
         // float localAngle = angle;
-       // Debug.Log(mousePoint);
+        // Debug.Log(mousePoint);
 
         mouse.transform.position = mousePointxz;
 
 
-      
+
 
         //센터 옮기는 함수
         float n = (int)mouseSize_local;
@@ -202,7 +202,7 @@ public class Array_Hex : MonoBehaviour
 
 
 
-      
+
 
 
 

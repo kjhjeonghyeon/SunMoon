@@ -4,18 +4,27 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using UnityEditor.UI;
+using UnityEngine.UIElements;
 
 public class Edit_Active : MonoBehaviour
 {
     
     Transform parent;
+    public Transform editManagerParent;
+    private void Awake()
+    {
+        
+       
+    }
     // Start is called before the first frame update
     void Start()
     {
 
         parent = gameObject.transform;
-       
-    }
+
+}
 
     // Update is called once per frame
     void Update()
@@ -25,22 +34,11 @@ public class Edit_Active : MonoBehaviour
 
    public void editButten_Active()
     {
-        foreach (Transform child in parent.GetComponentsInChildren <Transform>())
-        {
+        parent.GetChild(0).gameObject.SetActive(false);
+        parent.GetChild(1).gameObject.SetActive(true);
+        editManagerParent.GetChild(0).gameObject.SetActive(true);
 
-            if(child.gameObject.name== "Edit_Butten")
-            {
-               child.gameObject.SetActive(false);
-                Debug.Log("Active");
-            }
-            if (child.gameObject.name == "EditButton_Active_Butten")
-            {
-                child.gameObject.SetActive(true);
 
-            }
-          
-
-        }
 
 
 
@@ -48,21 +46,11 @@ public class Edit_Active : MonoBehaviour
 
     public void editButten_UnActive()
     {
-        foreach (Transform child in parent.GetComponentInChildren<Transform>().transform)
-        {
 
-            if (child.gameObject.name == "Edit_Butten")
-            {
-                child.gameObject.SetActive(true);
+        parent.GetChild(0).gameObject.SetActive(true);
+        parent.GetChild(1).gameObject.SetActive(false);
 
-            }
-            if (child.gameObject.name == "EditButton_Active_Butten")
-            {
-                child.gameObject.SetActive(false);
+        editManagerParent.GetChild(0).gameObject.SetActive(false);// code는 발동해서 오브젝트가 안꺼짐->수정해
 
-            }
-
-
-        }
     }
 }
