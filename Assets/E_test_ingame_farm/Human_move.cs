@@ -101,25 +101,40 @@ public class Human_move : MonoBehaviour
 
 
 
-        if (count > 0)
+        if (isHit == true)
         {
 
-            if (activecount == count)//갯수제한-> 1개씩
+            if (count > 0)
             {
-
-                activecount++;
-                timelin.Play();
-
-
-                timelin2.Play();
-                if (install != null)
+                if (activecount == count)//갯수제한-> 1개씩
                 {
-                    mypos.position = install;
 
-                    plant_Lv0_preview.transform.position = install;
+                    activecount++;
+                    timelin.Play();
+
+
+                    timelin2.Play();
+                    if (install != null)
+                    {
+                        mypos.position = install;
+
+                        plant_Lv0_preview.transform.position = install;
+
+                        for (int a = 0; a < 12; a++)
+                        {
+                            if (boxpos[a].transform.position == install)
+                            {
+                                boxpos[a].SetActive(false);
+                            }
+
+
+
+
+                        }
+                    }
+
+
                 }
-
-
             }
         }
 
