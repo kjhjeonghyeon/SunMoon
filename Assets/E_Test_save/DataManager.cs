@@ -50,18 +50,15 @@ public class DataManager : MonoBehaviour
     public PointData nowPoint = new PointData(); // 플레이어 데이터 생성
     public CoinData nowCoin = new CoinData();
     public FoodData nowFood = new FoodData();
-    public RobbyData nowRobby = new RobbyData();
 
-    string path_Point; // 경로
-    string path_Robby; // 경로
+    public string path_Point; // 경로
+    public string path_Robby; // 경로
 
 
     //  public int nowSlot = 0; // 현재 슬롯번호
 
     private void Awake()
     {
-       
-       
         #region 싱글톤
         if (instance == null)
         {
@@ -87,47 +84,19 @@ public class DataManager : MonoBehaviour
         string pointData = File.ReadAllText(path_Point);
         nowPoint = JsonUtility.FromJson<PointData>(pointData);
     }
-    public bool SaveDataPoint_bool()
+
+
+
+
+
+    public void SaveDataRobby()
     {
         string pointData = JsonUtility.ToJson(nowPoint);
-        File.WriteAllText(path_Point, pointData);
-
-
-        if (pointData == null)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        File.WriteAllText(path_Robby, pointData);
     }
-
-
-
-
-    //public void SaveDataRobby()
-    //{
-    //    string robbyData = JsonUtility.ToJson(nowRobby);
-    //    File.WriteAllText(path_Robby, robbyData);
-    //}
-    //public void LoadDataRobby()
-    //{
-    //    string robbyData = File.ReadAllText(path_Robby);
-    //    nowRobby = JsonUtility.FromJson<RobbyData>(robbyData);
-    //}
-    //public bool LoadDataRobby_bool()
-    //{
-    //    string robbyData = File.ReadAllText(path_Robby);
-    //    nowRobby = JsonUtility.FromJson<RobbyData>(robbyData);
-
-    //    if (robbyData == null)
-    //    {
-    //        return false;
-    //    }
-    //    else
-    //    {
-    //        return true;
-    //    }
-    //}
+    public void LoadDataRobby()
+    {
+        string pointData = File.ReadAllText(path_Robby);
+        nowPoint = JsonUtility.FromJson<PointData>(pointData);
+    }
 }
