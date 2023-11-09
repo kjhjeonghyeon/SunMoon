@@ -45,12 +45,14 @@ public class button_farm : MonoBehaviour
     {
         parent_Canvars.GetChild(1).gameObject.SetActive(false);
         parent_Canvars.GetChild(2).gameObject.SetActive(false);
+        parent_Canvars.GetChild(9).gameObject.SetActive(true);
 
     }
     public void Plant()
     {
         parent_Canvars.GetChild(1).gameObject.SetActive(true);
         parent_Canvars.GetChild(2).gameObject.SetActive(true);
+        parent_Canvars.GetChild(9).gameObject.SetActive(false);
     }
 
    
