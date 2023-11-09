@@ -3950,6 +3950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3db0c795 (json으로 점수기록함)
 =======
@@ -3964,6 +3965,10 @@ MonoBehaviour:
 >>>>>>> parent of d2b24d51 (temp ignore제거)
 =======
 >>>>>>> parent of 3db0c795 (json으로 점수기록함)
+=======
+  path_Point: 
+  path_Robby: 
+>>>>>>> parent of d2b24d51 (temp ignore제거)
 --- !u!1 &1241441434
 GameObject:
   m_ObjectHideFlags: 0
