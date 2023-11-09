@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/D_Script/PointSystem.cs.meta
 guid: 67f9bb5a1e061a44eb74728e42581f5e
 ========
 guid: 3afeda1f1a9ca9347beb6665c9913a0c
 >>>>>>>> parent of 3db0c795 (json으로 점수기록함):Assets/E_Test_save/SaveAndLoad.cs.meta
+=======
+guid: 67f9bb5a1e061a44eb74728e42581f5e
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
