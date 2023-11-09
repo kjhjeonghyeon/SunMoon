@@ -122,7 +122,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD:Assets/F_Prefab/fram_prefad/plant_Lv0.prefab
 --- !u!4 &4351878850879210121
+=======
+--- !u!4 &6684370749477948698
+>>>>>>> parent of 3db0c795 (json으로 점수기록함):Assets/Resourse/Prefab/fram_prefad/plant_Lv0.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

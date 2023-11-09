@@ -15,6 +15,7 @@ using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Human_move_farm : MonoBehaviour
 {
+<<<<<<< HEAD
 
     public PlayableDirector timelin;
     public PlayableDirector timelin2;
@@ -26,6 +27,23 @@ public class Human_move_farm : MonoBehaviour
     public GameObject boxs;
     GameObject[] boxpos = new GameObject[12];
 
+=======
+  //  public TextMeshProUGUI text;
+
+    public PlayableDirector timelin;
+    public PlayableDirector timelin2;
+    public PlayableDirector timeline3;
+
+    public GameObject plantLv0_Parent;
+    public GameObject plant_Lv0_preview;
+    public GameObject plantParent;
+
+
+    public GameObject boxs;
+    GameObject[] boxpos = new GameObject[12];
+
+    int liveCount = 0;
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
 
     int count = 0;
     int activecount = 1;
@@ -40,6 +58,14 @@ public class Human_move_farm : MonoBehaviour
     Vector3 install;
     GameObject my;
     public LayerMask layerMask;
+<<<<<<< HEAD
+=======
+    public LayerMask layerMask_planted;
+
+
+    
+
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     #region components
     Animator anim;
     Transform mypos;
@@ -49,18 +75,33 @@ public class Human_move_farm : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         mypos = GetComponent<Transform>();
 
+<<<<<<< HEAD
         plantParent = Instantiate(plantParent);
+=======
+       // text.text=PlayerPrefs.GetInt("point").ToString();
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     }
     private void Start()
     {
         pos_obj();
         my = gameObject;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     }
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
 
 
+=======
+        Debug.Log(PlayerPrefs.GetInt("point"));
+      
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
         move();
 
         pos();
@@ -68,6 +109,31 @@ public class Human_move_farm : MonoBehaviour
 
         seed_active();
 
+<<<<<<< HEAD
+=======
+        if (timeline3.time >= 7)
+        {
+            timeline3.Stop();
+            timeline3.time = 0.0f;
+           
+        }
+        if (timeline3.time >= 5)
+        {
+            for (int a = 0; a < plantParent.transform.childCount; a++)
+            {
+
+                if (plantParent.transform.GetChild(a).transform.position == installed)
+                {
+                    plant_Lv0_preview.SetActive(false);
+                   
+                    plantParent.transform.GetChild(a).gameObject.SetActive(false);
+
+
+                }
+            }
+        }
+
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     }
 
 
@@ -144,18 +210,73 @@ public class Human_move_farm : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
    public void Water()
+=======
+    public void Water()
+    {
+        waterButtonOn = true;
+
+
+    }
+    public void Plant()
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     {
         waterButtonOn = false;
     }
    public void Plant()
     {
+<<<<<<< HEAD
         waterButtonOn = true;
+=======
+
+
+        Vector3 plantnow = hit2.collider.gameObject.transform.position;
+
+        installed = plantnow;
+
+
+
+            //Debug.Log(install);
+            if (isHit_planted)
+            {
+                mypos.position = installed;
+                timeline3.Play();
+
+            //int k=0;
+            //k++;
+            //int l;
+            //l= PlayerPrefs.GetInt("point");
+
+            //text.text = (k + l).ToString();
+            //PlayerPrefs.SetInt("point",k+l );
+           
+            }
+        for (int a = 0; a < 12; a++)
+        {
+            if (boxpos[a].transform.position == installed)
+            {
+                boxpos[a].SetActive(true);
+
+            }
+
+
+
+
+        }
+
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     }
 
     private void seed_active()
     {
+<<<<<<< HEAD
 
+=======
+        int count_repeat = 0;
+       
+            
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
         if (timelin.time >= 11)
         {
             timelin.Stop();
@@ -167,11 +288,20 @@ public class Human_move_farm : MonoBehaviour
 
         if (timelin2.time >= 11)
         {
+<<<<<<< HEAD
             timelin2.Stop();
             timelin2.time = 0.0f;
 
             plant[plant.Count - 1].transform.position = install;
             plant[plant.Count - 1].SetActive(true);
+=======
+                        plant_Lv0_preview.SetActive(false);
+            count_repeat++;
+            timelin2.Stop();
+            timelin2.time = 0.0f;
+            plant[plant.Count - count_repeat].transform.position = install;
+            plant[plant.Count - count_repeat].SetActive(true);
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
 
 
         }
@@ -202,6 +332,15 @@ public class Human_move_farm : MonoBehaviour
 
 
     }
+<<<<<<< HEAD
+=======
+
+
+    public void Grow()
+    {
+
+    }
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     void pos_obj()
     {
         for (int a = 0; a < 12; a++)

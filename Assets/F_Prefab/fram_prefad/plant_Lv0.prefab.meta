@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/F_Prefab/fram_prefad/plant_Lv0.prefab.meta
 guid: 7efa102433590aa4d831bb3f9e3e6cf2
+=======
+guid: 4f1692f30a4af4348afa38c51f35958c
+>>>>>>> parent of 3db0c795 (json으로 점수기록함):Assets/Resourse/Prefab/fram_prefad/plant_Lv0.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

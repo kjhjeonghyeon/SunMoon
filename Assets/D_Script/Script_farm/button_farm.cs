@@ -41,6 +41,7 @@ public class button_farm : MonoBehaviour
 
    public void Papper_Explation()
     {
+<<<<<<< HEAD
         count_explantion++;
   
         if (count_explantion == 1)
@@ -61,13 +62,22 @@ public class button_farm : MonoBehaviour
         }
         Debug.Log(count_explantion);
 
+=======
+        parent_Canvars.GetChild(1).gameObject.SetActive(false);
+        parent_Canvars.GetChild(2).gameObject.SetActive(false);
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
 
     }
     IEnumerator Story_button()
     {
+<<<<<<< HEAD
         yield return new WaitForSeconds(1f);
         
         parent_Canvars.GetChild(4).transform.GetChild(1).gameObject.SetActive(false);
+=======
+        parent_Canvars.GetChild(1).gameObject.SetActive(true);
+        parent_Canvars.GetChild(2).gameObject.SetActive(true);
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
     }
 
    
