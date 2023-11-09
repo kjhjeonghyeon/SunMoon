@@ -13,8 +13,11 @@ EditorBuildSettings:
     guid: 6ec4b73c48639bd4498f8069bf5a81ce
   - enabled: 1
     path: Assets/C_Scenes/2.LobbyScene.unity
-    guid: 8b375263939092d45b68d1af61fd24d2
+    guid: 81b0fc70c5ef0ef4f83ee4d97b381db6
   - enabled: 1
     path: Assets/C_Scenes/3.SavingScenes.unity
     guid: bfccdc0cb8aea6e43a0e738c0f179d3e
+  - enabled: 1
+    path: Assets/Y_Backup/2.LobbyScene.unity
+    guid: 8b375263939092d45b68d1af61fd24d2
   m_configObjects: {}
