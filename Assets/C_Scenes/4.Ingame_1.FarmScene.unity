@@ -3890,6 +3890,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1235621736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,6 +3948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701e6002c303b804185c43ecd43758a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
 =======
 >>>>>>> parent of 3db0c795 (json으로 점수기록함)
 =======
