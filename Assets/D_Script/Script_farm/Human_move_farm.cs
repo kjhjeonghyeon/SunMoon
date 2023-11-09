@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,34 +13,26 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
-using static UnityEditor.Progress;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Human_move_farm : MonoBehaviour
 {
-    public TextMeshProUGUI textPoint;
-    string savePoint;
-
-    int pointCount = 0;
+  //  public TextMeshProUGUI text;
 
     public PlayableDirector timelin;
     public PlayableDirector timelin2;
     public PlayableDirector timeline3;
-    public PlayableDirector timeline4_grow;
 
     public GameObject plantLv0_Parent;
-    public GameObject plantLvMax_fruit;
     public GameObject plant_Lv0_preview;
-    public GameObject plant_LvMax_preview;
     public GameObject plantParent;
-    public GameObject items;
 
-    List<GameObject> plantLvMax_fruit_instantiate;
 
     public GameObject boxs;
     GameObject[] boxpos = new GameObject[12];
 
     int liveCount = 0;
+
     int count = 0;
     int activecount = 1;
     bool waterButtonOn = false;
@@ -61,7 +52,7 @@ public class Human_move_farm : MonoBehaviour
     public LayerMask layerMask_planted;
 
 
-    int activeCount;
+    
 
     #region components
     Animator anim;
@@ -72,34 +63,21 @@ public class Human_move_farm : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         mypos = GetComponent<Transform>();
 
-
-        // Debug.Log(savePoint + "," + savePoint.ToString().GetType());
+       // text.text=PlayerPrefs.GetInt("point").ToString();
     }
     private void Start()
     {
         pos_obj();
         my = gameObject;
 
-        savePoint = DataManager.instance.nowPoint.point.ToString();
-        textPoint.text = savePoint;
 
 
-
-
-    }
-
-
-    int putinfoPoint()
-    {
-        return int.Parse(savePoint) + pointCount;
     }
     // Update is called once per frame
     void Update()
     {
-
-        DataManager.instance.nowPoint.point = putinfoPoint();
-
-
+        Debug.Log(PlayerPrefs.GetInt("point"));
+      
         move();
 
         pos();
@@ -111,7 +89,7 @@ public class Human_move_farm : MonoBehaviour
         {
             timeline3.Stop();
             timeline3.time = 0.0f;
-
+           
         }
         if (timeline3.time >= 5)
         {
@@ -121,7 +99,7 @@ public class Human_move_farm : MonoBehaviour
                 if (plantParent.transform.GetChild(a).transform.position == installed)
                 {
                     plant_Lv0_preview.SetActive(false);
-
+                   
                     plantParent.transform.GetChild(a).gameObject.SetActive(false);
 
 
@@ -171,13 +149,6 @@ public class Human_move_farm : MonoBehaviour
 
                 if (count > 0)
                 {
-
-
-                    pointCount++;
-                    textPoint.text = putinfoPoint().ToString();
-
-
-
                     if (activecount == count)//갯수제한-> 1개씩
                     {
                         activecount++;
@@ -213,26 +184,7 @@ public class Human_move_farm : MonoBehaviour
 
         }
     }
-    public void Grow()
-    {
-        if (isHit_planted)
-        {
 
-        Vector3 plantnow_growing = hit2.collider.gameObject.transform.position;
-        plant_LvMax_preview.transform.position = plantnow_growing;
-
-        timeline4_grow.Play();
-        hit2.collider.gameObject.SetActive(false);
-        
-        if (timeline4_grow.time == 5)
-        {
-            plant_LvMax_preview.transform.GetChild(0).gameObject.SetActive(true);
-            timeline4_grow.time = 0;
-            plantLvMax_fruit_instantiate.Add(Instantiate(plantLvMax_fruit, plantnow_growing, Quaternion.identity));
-                Debug.Log(1);
-        }
-        }
-    }
     public void Water()
     {
         waterButtonOn = true;
@@ -253,40 +205,21 @@ public class Human_move_farm : MonoBehaviour
 
 
 
-        //Debug.Log(install);
-        if (isHit_planted)
-        {
-            for (int a = 0; a < plantLvMax_fruit_instantiate.Count; a++)
+            //Debug.Log(install);
+            if (isHit_planted)
             {
-
-                if (plantLvMax_fruit_instantiate[a].gameObject.transform.position == installed)
-                {
-                    plantLvMax_fruit_instantiate[a].transform.GetChild(0).gameObject.SetActive(false);
-                    pointCount += 7;
-                }
-                
-                
-
-                    mypos.position = installed;
-                    timeline3.Play();
-                    items.transform.position = installed;
-                    pointCount += 3;
-                    textPoint.text = putinfoPoint().ToString();
-
-
-                
-            }
+                mypos.position = installed;
+                timeline3.Play();
 
             //int k=0;
             //k++;
             //int l;
             //l= PlayerPrefs.GetInt("point");
 
-            //textPoint.textPoint = (k + l).ToString();
+            //text.text = (k + l).ToString();
             //PlayerPrefs.SetInt("point",k+l );
-
-        }
-
+           
+            }
         for (int a = 0; a < 12; a++)
         {
             if (boxpos[a].transform.position == installed)
@@ -304,8 +237,8 @@ public class Human_move_farm : MonoBehaviour
     private void seed_active()
     {
         int count_repeat = 0;
-
-
+       
+            
         if (timelin.time >= 11)
         {
             timelin.Stop();
@@ -317,13 +250,13 @@ public class Human_move_farm : MonoBehaviour
 
         if (timelin2.time >= 11)
         {
-            plant_Lv0_preview.SetActive(false);
+                        plant_Lv0_preview.SetActive(false);
             count_repeat++;
             timelin2.Stop();
             timelin2.time = 0.0f;
             plant[plant.Count - count_repeat].transform.position = install;
             plant[plant.Count - count_repeat].SetActive(true);
-            activeCount = plant.Count - count_repeat;
+
 
         }
     }
@@ -355,7 +288,10 @@ public class Human_move_farm : MonoBehaviour
     }
 
 
+    public void Grow()
+    {
 
+    }
     void pos_obj()
     {
         for (int a = 0; a < 12; a++)
