@@ -8,7 +8,7 @@ public class RobbySave : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //DataManager.instance.LoadDataRobby();
+        DataManager.instance.LoadDataRobby();
     }
 
     // Update is called once per frame
@@ -24,10 +24,10 @@ public class RobbySave : MonoBehaviour
     IEnumerator turm()
     {
         yield return null;
-       // DataManager.instance.SaveDataRobby(); 
+        DataManager.instance.SaveDataRobby();
         yield return new WaitForSeconds(1f);
 
-       // DataManager.instance.LoadDataRobby();
+        DataManager.instance.LoadDataRobby();
 
     }
 }
