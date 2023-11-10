@@ -4257,6 +4257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701e6002c303b804185c43ecd43758a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/C_Scenes/6.Ingame_3.FarmScene.unity
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4288,6 +4289,10 @@ GameObject:
 >>>>>>> parent of 02182d19 (farm과 로비 정비):Assets/C_Scenes/6.Ingame_3.FarmScene.unity
 =======
 >>>>>>> parent of 3db0c795 (json으로 점수기록함):Assets/C_Scenes/4.Ingame_1.FarmScene.unity
+=======
+  path_Point: 
+  path_Robby: 
+>>>>>>> parent of d2b24d51 (temp ignore제거):Assets/C_Scenes/4.Ingame_1.FarmScene.unity
 --- !u!1 &1241441434
 GameObject:
   m_ObjectHideFlags: 0
