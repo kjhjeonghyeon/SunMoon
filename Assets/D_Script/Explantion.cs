@@ -38,7 +38,7 @@ public class Explantion : MonoBehaviour
             StartCoroutine(Story_button());
             count_explantion = 0;
         }
-     //   Debug.Log(count_explantion);
+        Debug.Log(count_explantion);
 
 
     }

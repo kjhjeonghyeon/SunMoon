@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using TMPro;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -14,34 +11,40 @@ using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
-using static UnityEditor.Progress;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Human_move_farm : MonoBehaviour
 {
-    public TextMeshProUGUI textPoint;
-    string savePoint;
+<<<<<<< HEAD
 
-    int pointCount = 0;
+    public PlayableDirector timelin;
+    public PlayableDirector timelin2;
+
+    public GameObject plantLv0;
+    public GameObject plant_Lv0_preview;
+    public GameObject plantParent;
+    public GameObject objnull;
+    public GameObject boxs;
+    GameObject[] boxpos = new GameObject[12];
+
+=======
+  //  public TextMeshProUGUI text;
 
     public PlayableDirector timelin;
     public PlayableDirector timelin2;
     public PlayableDirector timeline3;
-    public PlayableDirector timeline4_grow;
 
     public GameObject plantLv0_Parent;
-    public GameObject plantLvMax_fruit;
     public GameObject plant_Lv0_preview;
-    public GameObject plant_LvMax_preview;
     public GameObject plantParent;
-    public GameObject items;
 
-    List<GameObject> plantLvMax_fruit_instantiate;
 
     public GameObject boxs;
     GameObject[] boxpos = new GameObject[12];
 
     int liveCount = 0;
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
+
     int count = 0;
     int activecount = 1;
     bool waterButtonOn = false;
@@ -51,18 +54,18 @@ public class Human_move_farm : MonoBehaviour
 
     public GameObject directer;
     bool isHit;
-    bool isHit_planted;
     RaycastHit hit;
-    RaycastHit hit2;
     Vector3 install;
-    Vector3 installed;
     GameObject my;
     public LayerMask layerMask;
+<<<<<<< HEAD
+=======
     public LayerMask layerMask_planted;
 
 
-    int activeCount;
+    
 
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
     #region components
     Animator anim;
     Transform mypos;
@@ -72,34 +75,33 @@ public class Human_move_farm : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         mypos = GetComponent<Transform>();
 
-
-        // Debug.Log(savePoint + "," + savePoint.ToString().GetType());
+<<<<<<< HEAD
+        plantParent = Instantiate(plantParent);
+=======
+       // text.text=PlayerPrefs.GetInt("point").ToString();
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
     }
     private void Start()
     {
         pos_obj();
         my = gameObject;
-
-        savePoint = DataManager.instance.nowPoint.point.ToString();
-        textPoint.text = savePoint;
-
+<<<<<<< HEAD
+=======
 
 
 
-    }
-
-
-    int putinfoPoint()
-    {
-        return int.Parse(savePoint) + pointCount;
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
     }
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
 
-        DataManager.instance.nowPoint.point = putinfoPoint();
 
-
+=======
+        Debug.Log(PlayerPrefs.GetInt("point"));
+      
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
         move();
 
         pos();
@@ -107,11 +109,13 @@ public class Human_move_farm : MonoBehaviour
 
         seed_active();
 
+<<<<<<< HEAD
+=======
         if (timeline3.time >= 7)
         {
             timeline3.Stop();
             timeline3.time = 0.0f;
-
+           
         }
         if (timeline3.time >= 5)
         {
@@ -121,7 +125,7 @@ public class Human_move_farm : MonoBehaviour
                 if (plantParent.transform.GetChild(a).transform.position == installed)
                 {
                     plant_Lv0_preview.SetActive(false);
-
+                   
                     plantParent.transform.GetChild(a).gameObject.SetActive(false);
 
 
@@ -129,6 +133,7 @@ public class Human_move_farm : MonoBehaviour
             }
         }
 
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
     }
 
 
@@ -143,7 +148,6 @@ public class Human_move_farm : MonoBehaviour
 
         // Physics.Raycast (·¹ÀÌÀú¸¦ ¹ß»çÇÒ À§Ä¡, ¹ß»ç ¹æÇâ, Ãæµ¹ °á°ú, ÃÖ´ë °Å¸®)
         isHit = Physics.Raycast(directer.transform.position, directer.transform.forward, out hit, maxDistance, layerMask);
-        isHit_planted = Physics.Raycast(directer.transform.position, directer.transform.forward, out hit2, 1f, layerMask_planted);
 
 
 
@@ -162,7 +166,7 @@ public class Human_move_farm : MonoBehaviour
     public void seed()
     {
 
-        if (waterButtonOn == false)
+        if (waterButtonOn)
         {
 
 
@@ -171,18 +175,11 @@ public class Human_move_farm : MonoBehaviour
 
                 if (count > 0)
                 {
-
-
-                    pointCount++;
-                    textPoint.text = putinfoPoint().ToString();
-
-
-
                     if (activecount == count)//°¹¼öÁ¦ÇÑ-> 1°³¾¿
                     {
+
                         activecount++;
                         timelin.Play();
-                        plant_Lv0_preview.SetActive(true);
 
 
                         timelin2.Play();
@@ -197,7 +194,6 @@ public class Human_move_farm : MonoBehaviour
                                 if (boxpos[a].transform.position == install)
                                 {
                                     boxpos[a].SetActive(false);
-
                                 }
 
 
@@ -213,26 +209,10 @@ public class Human_move_farm : MonoBehaviour
 
         }
     }
-    public void Grow()
-    {
-        if (isHit_planted)
-        {
 
-        Vector3 plantnow_growing = hit2.collider.gameObject.transform.position;
-        plant_LvMax_preview.transform.position = plantnow_growing;
-
-        timeline4_grow.Play();
-        hit2.collider.gameObject.SetActive(false);
-        
-        if (timeline4_grow.time == 5)
-        {
-            plant_LvMax_preview.transform.GetChild(0).gameObject.SetActive(true);
-            timeline4_grow.time = 0;
-            plantLvMax_fruit_instantiate.Add(Instantiate(plantLvMax_fruit, plantnow_growing, Quaternion.identity));
-                Debug.Log(1);
-        }
-        }
-    }
+<<<<<<< HEAD
+   public void Water()
+=======
     public void Water()
     {
         waterButtonOn = true;
@@ -240,11 +220,15 @@ public class Human_move_farm : MonoBehaviour
 
     }
     public void Plant()
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
     {
         waterButtonOn = false;
     }
-    public void havest()
+   public void Plant()
     {
+<<<<<<< HEAD
+        waterButtonOn = true;
+=======
 
 
         Vector3 plantnow = hit2.collider.gameObject.transform.position;
@@ -253,40 +237,21 @@ public class Human_move_farm : MonoBehaviour
 
 
 
-        //Debug.Log(install);
-        if (isHit_planted)
-        {
-            for (int a = 0; a < plantLvMax_fruit_instantiate.Count; a++)
+            //Debug.Log(install);
+            if (isHit_planted)
             {
-
-                if (plantLvMax_fruit_instantiate[a].gameObject.transform.position == installed)
-                {
-                    plantLvMax_fruit_instantiate[a].transform.GetChild(0).gameObject.SetActive(false);
-                    pointCount += 7;
-                }
-                
-                
-
-                    mypos.position = installed;
-                    timeline3.Play();
-                    items.transform.position = installed;
-                    pointCount += 3;
-                    textPoint.text = putinfoPoint().ToString();
-
-
-                
-            }
+                mypos.position = installed;
+                timeline3.Play();
 
             //int k=0;
             //k++;
             //int l;
             //l= PlayerPrefs.GetInt("point");
 
-            //textPoint.textPoint = (k + l).ToString();
+            //text.text = (k + l).ToString();
             //PlayerPrefs.SetInt("point",k+l );
-
-        }
-
+           
+            }
         for (int a = 0; a < 12; a++)
         {
             if (boxpos[a].transform.position == installed)
@@ -300,12 +265,18 @@ public class Human_move_farm : MonoBehaviour
 
         }
 
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
     }
+
     private void seed_active()
     {
+<<<<<<< HEAD
+
+=======
         int count_repeat = 0;
-
-
+       
+            
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
         if (timelin.time >= 11)
         {
             timelin.Stop();
@@ -317,20 +288,28 @@ public class Human_move_farm : MonoBehaviour
 
         if (timelin2.time >= 11)
         {
-            plant_Lv0_preview.SetActive(false);
+<<<<<<< HEAD
+            timelin2.Stop();
+            timelin2.time = 0.0f;
+
+            plant[plant.Count - 1].transform.position = install;
+            plant[plant.Count - 1].SetActive(true);
+=======
+                        plant_Lv0_preview.SetActive(false);
             count_repeat++;
             timelin2.Stop();
             timelin2.time = 0.0f;
             plant[plant.Count - count_repeat].transform.position = install;
             plant[plant.Count - count_repeat].SetActive(true);
-            activeCount = plant.Count - count_repeat;
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
+
 
         }
     }
 
     public void buy()
     {
-        if (waterButtonOn == false)
+        if (waterButtonOn)
         {
 
             if (count < activecount)//°¹¼öÁ¦ÇÑ-> 1°³¾¿
@@ -339,23 +318,29 @@ public class Human_move_farm : MonoBehaviour
 
 
 
-                liveCount = count - 1;
 
-                plant.Add(plantLv0_Parent.transform.GetChild(11 - liveCount).gameObject);
 
-                plant[liveCount].transform.SetParent(plantParent.transform);
-
+                plant.Add(Instantiate(plantLv0, plantParent.transform));
 
                 plantParent.transform.GetChild(count - 1).gameObject.SetActive(false);
+
+
+
 
             }
         }
 
 
     }
+<<<<<<< HEAD
+=======
 
 
+    public void Grow()
+    {
 
+    }
+>>>>>>> parent of 3db0c795 (jsonìœ¼ë¡œ ì ìˆ˜ê¸°ë¡í•¨)
     void pos_obj()
     {
         for (int a = 0; a < 12; a++)
@@ -382,8 +367,7 @@ public class Human_move_farm : MonoBehaviour
                 if (hit.collider.gameObject.name == boxpos[a].name)
                 {
 
-                    //install = new Vector3(boxpos[a].transform.position.x, gameObject.transform.position.y, boxpos[a].transform.position.z);
-                    install = boxpos[a].transform.position;
+                    install = new Vector3(boxpos[a].transform.position.x, gameObject.transform.position.y, boxpos[a].transform.position.z);
 
 
 

@@ -38,7 +38,7 @@ namespace TMPro.Examples
 
 
         /// <summary>
-        ///  Method to curve textPoint along a Unity animation curve.
+        ///  Method to curve text along a Unity animation curve.
         /// </summary>
         /// <param name="textComponent"></param>
         /// <returns></returns>
@@ -68,7 +68,7 @@ namespace TMPro.Examples
                 old_CurveScale = CurveScale;
                 old_curve = CopyAnimationCurve(VertexCurve);
 
-                m_TextComponent.ForceMeshUpdate(); // Generate the mesh and populate the textInfo with pathdata we can use and manipulate.
+                m_TextComponent.ForceMeshUpdate(); // Generate the mesh and populate the textInfo with data we can use and manipulate.
 
                 TMP_TextInfo textInfo = m_TextComponent.textInfo;
                 int characterCount = textInfo.characterCount;

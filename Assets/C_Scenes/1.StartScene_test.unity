@@ -950,6 +950,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540755126}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+=======
 --- !u!1 &642674809
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 642674810}
+  - component: {fileID: 642674811}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -981,6 +984,19 @@ Transform:
   m_Father: {fileID: 1746396245}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &642674811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642674809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f9bb5a1e061a44eb74728e42581f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of 3db0c795 (json으로 점수기록함)
 --- !u!1 &1081052323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1479294041}
   - component: {fileID: 1479294042}
+  - component: {fileID: 1479294043}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1263,6 +1280,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e1128d460e18084fb66070d81718f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1479294043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479294040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3afeda1f1a9ca9347beb6665c9913a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1746396242
@@ -1306,7 +1335,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 642674810}
   - {fileID: 1479294041}
   m_Father: {fileID: 0}
   m_RootOrder: 4
