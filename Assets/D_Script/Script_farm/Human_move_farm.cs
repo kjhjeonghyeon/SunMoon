@@ -35,8 +35,9 @@ public class Human_move_farm : MonoBehaviour
     public GameObject plant_LvMax_preview;
     public GameObject plantParent;
     public GameObject items;
+    public GameObject water;
 
-    List<GameObject> plantLvMax_fruit_instantiate;
+    public GameObject plantLvMax_fruit_parent;
 
     public GameObject boxs;
     GameObject[] boxpos = new GameObject[12];
@@ -62,7 +63,7 @@ public class Human_move_farm : MonoBehaviour
 
 
     int activeCount;
-
+    Vector3 plantnow;
     #region components
     Animator anim;
     Transform mypos;
@@ -215,23 +216,34 @@ public class Human_move_farm : MonoBehaviour
     }
     public void Grow()
     {
+
         if (isHit_planted)
         {
 
-        Vector3 plantnow_growing = hit2.collider.gameObject.transform.position;
-        plant_LvMax_preview.transform.position = plantnow_growing;
+            Vector3 plantnow_growing = hit2.collider.gameObject.transform.position;
+            plant_LvMax_preview.transform.position = plantnow_growing;
 
-        timeline4_grow.Play();
+            timeline4_grow.Play();
+            StartCoroutine(Growing());
+
+        }
+
+    }
+    IEnumerator Growing()
+    {
+
+        yield return new WaitForSeconds(1f);
+
         hit2.collider.gameObject.SetActive(false);
-        
-        if (timeline4_grow.time == 5)
-        {
-            plant_LvMax_preview.transform.GetChild(0).gameObject.SetActive(true);
-            timeline4_grow.time = 0;
-            plantLvMax_fruit_instantiate.Add(Instantiate(plantLvMax_fruit, plantnow_growing, Quaternion.identity));
-                Debug.Log(1);
-        }
-        }
+
+        yield return new WaitForSeconds(3f);
+        Instantiate(plantLvMax_fruit, plant_LvMax_preview.transform.position, Quaternion.identity, plantLvMax_fruit_parent.transform);
+        plant_LvMax_preview.transform.GetChild(0).gameObject.SetActive(false);
+        timeline4_grow.time = 0;
+        timeline4_grow.Stop();
+        water.transform.GetChild(0).gameObject.SetActive(false);
+
+
     }
     public void Water()
     {
@@ -243,11 +255,33 @@ public class Human_move_farm : MonoBehaviour
     {
         waterButtonOn = false;
     }
+    IEnumerator havesting()
+    {
+        for (int a = 0; a < plantLvMax_fruit_parent.transform.childCount; a++)
+        {
+            if (plantLvMax_fruit_parent.transform.GetChild(a).gameObject.transform.position == installed)
+            {
+                pointCount += 7;
+                yield return new WaitForSeconds(2f);
+                plantLvMax_fruit_parent.transform.GetChild(a).gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.5f);
+                plantLvMax_fruit_parent.transform.GetChild(a).gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+                plantLvMax_fruit_parent.transform.GetChild(a).gameObject.SetActive(false);
+                yield return new WaitForSeconds(0.5f);
+                plantLvMax_fruit_parent.transform.GetChild(a).gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.5f);
+                plantLvMax_fruit_parent.transform.GetChild(a).gameObject.SetActive(false);
+            }
+
+        }
+
+    }
     public void havest()
     {
 
 
-        Vector3 plantnow = hit2.collider.gameObject.transform.position;
+      plantnow = hit2.collider.gameObject.transform.position;
 
         installed = plantnow;
 
@@ -256,26 +290,19 @@ public class Human_move_farm : MonoBehaviour
         //Debug.Log(install);
         if (isHit_planted)
         {
-            for (int a = 0; a < plantLvMax_fruit_instantiate.Count; a++)
-            {
 
-                if (plantLvMax_fruit_instantiate[a].gameObject.transform.position == installed)
-                {
-                    plantLvMax_fruit_instantiate[a].transform.GetChild(0).gameObject.SetActive(false);
-                    pointCount += 7;
-                }
-                
-                
-
-                    mypos.position = installed;
-                    timeline3.Play();
-                    items.transform.position = installed;
-                    pointCount += 3;
-                    textPoint.text = putinfoPoint().ToString();
+            StartCoroutine(havesting());
 
 
-                
-            }
+            mypos.position = installed;
+            timeline3.Play();
+            items.transform.position = installed;
+            pointCount += 3;
+            textPoint.text = putinfoPoint().ToString();
+
+
+
+
 
             //int k=0;
             //k++;
@@ -320,10 +347,10 @@ public class Human_move_farm : MonoBehaviour
             plant_Lv0_preview.SetActive(false);
             count_repeat++;
             timelin2.Stop();
-            timelin2.time = 0.0f;
             plant[plant.Count - count_repeat].transform.position = install;
             plant[plant.Count - count_repeat].SetActive(true);
             activeCount = plant.Count - count_repeat;
+            timelin2.time = 0.0f;
 
         }
     }

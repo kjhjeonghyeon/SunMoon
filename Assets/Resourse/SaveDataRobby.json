@@ -1,0 +1,58 @@
+{
+    "robbyData": [
+        {
+            "hexname": "Hex_Robby",
+            "position": {
+                "x": 0.5,
+                "y": 0.0,
+                "z": -0.8299999833106995
+            },
+            "ative": true
+        },
+        {
+            "hexname": "Hex_ farm",
+            "position": {
+                "x": -1.0,
+                "y": 0.0,
+                "z": -5.960464477539063e-7
+            },
+            "ative": true
+        },
+        {
+            "hexname": "Hex_wiled",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "ative": false
+        },
+        {
+            "hexname": "Hex_house",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "ative": false
+        },
+        {
+            "hexname": "Hex_Lake",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "ative": false
+        },
+        {
+            "hexname": "save",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "ative": false
+        }
+    ]
+}

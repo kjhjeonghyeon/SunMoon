@@ -10,9 +10,14 @@ public class pointSave : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+    }
+    private void Start()
+    {
+
+       // DataManager.instance.SaveDataPoint();
+
         DataManager.instance.LoadDataPoint();
     }
-
     // Update is called once per frame
     void Update()
     {
