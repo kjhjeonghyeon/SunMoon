@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Drawing;
 using UnityEngine.UI;
+using UnityEngine.Device;
 
 public class PointData
 {
@@ -84,6 +85,7 @@ public class DataManager : MonoBehaviour
     string path_Point_; // 경로
     string path_Robby; // 경로
     string path_Robby_; // 경로
+    string path_; // 경로
 
 
     //  public int nowSlot = 0; // 현재 슬롯번호
@@ -110,21 +112,30 @@ public class DataManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         #endregion
 
-        path_Point = "D:\\github\\SunMoon\\Assets\\Resourse\\SaveData" + "Point" + ".json";	// 경로 지정
-        path_Point_ = "E:\\github\\SunMoon\\Assets\\Resourse\\SaveData" + "Point" + ".json";	// 경로 지정
-        path_Robby = "D:\\github\\SunMoon\\Assets\\Resourse"; // 경로 지정
-        path_Robby_ = "E:\\github\\SunMoon\\Assets\\Resourse"; // 경로 지정
+        // path_Point_ = "D:\\github\\SunMoon\\Assets\\Resourse\\SaveData" + "Point" + ".json";	// 경로 지정
+        //  path_Point = "E:\\github\\SunMoon\\Assets\\Resourse\\SaveData" + "Point" + ".json";	// 경로 지정
+        //path_Point = "E:\\github\\SunMoon\\Assets\\Resourse";	// 경로 지정
+        //  path_Robby_ = "D:\\github\\SunMoon\\Assets\\Resourse"; // 경로 지정
+        // path_Robby = "E:\\github\\SunMoon\\Assets\\Resourse"; // 경로 지정
+        path_ =UnityEngine.Application.persistentDataPath; // 경로 지정
+        path_Point_ = path_;
+        path_Robby_= path_;
     
     }
     public void SaveDataPoint()
     {
-        string pointData = JsonUtility.ToJson(nowPoint);
-        File.WriteAllText(path_Point_, pointData);
+        //string pointData = JsonUtility.ToJson(nowPoint);
+
+        string pointData = JsonUtility.ToJson(nowPoint, true);
+        string path = Path.Combine(path_Point_, "SaveDataPoint.json");
+        File.WriteAllText(path, pointData);
     }
     public void LoadDataPoint()
     {
-        string pointData = File.ReadAllText(path_Point_);
-        nowPoint = JsonUtility.FromJson<PointData>(pointData);
+        // string pointData = File.ReadAllText(path_Point_);
+
+        string path = Path.Combine(path_Point_, "SaveDataPoint.json");
+        nowPoint = JsonUtility.FromJson<PointData>(path);
     }
 
 

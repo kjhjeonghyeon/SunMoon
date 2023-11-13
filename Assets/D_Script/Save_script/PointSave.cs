@@ -13,8 +13,11 @@ public class pointSave : MonoBehaviour
     }
     private void Start()
     {
-
-       // DataManager.instance.SaveDataPoint();
+        if (DataManager.instance.nowPoint.point == 0)
+        {
+         
+        DataManager.instance.SaveDataPoint();
+        }
 
         DataManager.instance.LoadDataPoint();
     }

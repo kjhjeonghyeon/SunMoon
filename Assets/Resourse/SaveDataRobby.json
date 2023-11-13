@@ -3,47 +3,47 @@
         {
             "hexname": "Hex_Robby",
             "position": {
-                "x": 0.5,
+                "x": 0.0,
                 "y": 0.0,
-                "z": -0.8299999833106995
+                "z": -2.384185791015625e-7
             },
             "ative": true
         },
         {
             "hexname": "Hex_ farm",
             "position": {
-                "x": -1.0,
+                "x": -0.5,
                 "y": 0.0,
-                "z": -5.960464477539063e-7
+                "z": -0.8300002217292786
             },
             "ative": true
         },
         {
             "hexname": "Hex_wiled",
             "position": {
-                "x": 0.0,
+                "x": 1.0,
                 "y": 0.0,
-                "z": 0.0
+                "z": -2.384185791015625e-7
             },
-            "ative": false
+            "ative": true
         },
         {
             "hexname": "Hex_house",
             "position": {
-                "x": 0.0,
+                "x": 0.5,
                 "y": 0.0,
-                "z": 0.0
+                "z": -0.8300002217292786
             },
-            "ative": false
+            "ative": true
         },
         {
             "hexname": "Hex_Lake",
             "position": {
-                "x": 0.0,
+                "x": -1.0,
                 "y": 0.0,
-                "z": 0.0
+                "z": -2.384185791015625e-7
             },
-            "ative": false
+            "ative": true
         },
         {
             "hexname": "save",
