@@ -309,16 +309,16 @@ public class Array_Hex : MonoBehaviour
 
             obj = hex_Array[1];
         }
-
-        public void Wiled()
-        {
-            obj = hex_Array[2];
-
-        }
         public void House()
         {
 
+            obj = hex_Array[2];
+        }
+
+        public void Wiled()
+        {
             obj = hex_Array[3];
+
         }
 
         public void Lake()

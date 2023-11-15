@@ -26,4 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/C_Scenes/8.Ingame_6.Lake.unity
     guid: bbcce7fa58a5f9d41866f25370e8c9f0
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: c73a90c3483bd934cbed9e0b0533cc7d,
+      type: 2}

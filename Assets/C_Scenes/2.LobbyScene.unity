@@ -699,6 +699,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701e6002c303b804185c43ecd43758a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowPoint:
+    name: Point
+    point: -10000
+  nowCoin:
+    name: Coin
+    coin: -10000
   robbyDatas:
     robbyData:
     - hexname: 
@@ -1417,7 +1423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 890, y: 359.11584}
+  m_AnchoredPosition: {x: 897, y: 360.86584}
   m_SizeDelta: {x: 62.8896, y: 59.133102}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &314750935
