@@ -5,14 +5,14 @@ using UnityEngine.EventSystems;
 
 public class SelectToRobbyFromScene : MonoBehaviour, IPointerClickHandler
 {
-   
-    Butten butten = new Butten();
+
+    Butten butten;
     public int goScene;
     // Start is called before the first frame update
     void Start()
     {
-       
 
+        butten = new Butten();
 
     }
 

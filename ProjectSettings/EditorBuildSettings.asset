@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/C_Scenes/0.RodingScene.unity
     guid: 9cb1980793bb57649a8dfb8bef02b351
   - enabled: 1
-    path: Assets/C_Scenes/1.StartScene_test.unity
-    guid: 6ec4b73c48639bd4498f8069bf5a81ce
+    path: Assets/C_Scenes/1.StartScene_newstart.unity
+    guid: 474d5a843d35b6648b4a41a08595303d
   - enabled: 1
     path: Assets/C_Scenes/2.LobbyScene.unity
     guid: 81b0fc70c5ef0ef4f83ee4d97b381db6
@@ -20,11 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/C_Scenes/4.Ingame_2.HouseScene.unity
     guid: 53ad241d55f802f4c82c7813f6f98abf
-  - enabled: 1
-    path: Assets/C_Scenes/5.Ingame_3.Forest.unity
+  - enabled: 0
+    path: Assets/Y_Backup/5.Ingame_3.Forest.unity
     guid: 00ee10f07683dbc4fa91e838c0c3da55
-  - enabled: 1
-    path: Assets/C_Scenes/8.Ingame_6.Lake.unity
+  - enabled: 0
+    path: Assets/Y_Backup/8.Ingame_6.Lake.unity
     guid: bbcce7fa58a5f9d41866f25370e8c9f0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c73a90c3483bd934cbed9e0b0533cc7d,

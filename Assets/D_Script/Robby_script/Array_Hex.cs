@@ -299,7 +299,7 @@ public class Array_Hex : MonoBehaviour
 
         public void Lobby()
         {
-            obj = hex_Array[0];
+            obj = hex_Array[1];
         }
 
         public void Farm()
@@ -307,27 +307,27 @@ public class Array_Hex : MonoBehaviour
 
 
 
-            obj = hex_Array[1];
+            obj = hex_Array[2];
         }
         public void House()
         {
 
-            obj = hex_Array[2];
+            obj = hex_Array[3];
         }
 
         public void Wiled()
         {
-            obj = hex_Array[3];
+            obj = hex_Array[4];
 
         }
 
         public void Lake()
         {
-            obj = hex_Array[4];
+            obj = hex_Array[5];
         }
         public void save()
         {
-            obj = hex_Array[5];
+            obj = hex_Array[0];
         }
 
 

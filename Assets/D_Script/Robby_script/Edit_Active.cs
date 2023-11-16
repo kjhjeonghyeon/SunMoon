@@ -36,10 +36,10 @@ public class Edit_Active : MonoBehaviour
 
    public void editButten_Active()
     {
+        parent_canvars.GetChild(1).gameObject.SetActive(true);
+        parent_canvars.GetChild(2).gameObject.SetActive(false);
+        parent_canvars.GetChild(4).gameObject.SetActive(true);
         parent_canvars.GetChild(0).gameObject.SetActive(true);
-        parent_canvars.GetChild(1).gameObject.SetActive(false);
-        parent_canvars.GetChild(3).gameObject.SetActive(true);
-        parent_canvars.GetChild(6).gameObject.SetActive(true);
 
 
         parent_selec.GetChild(0).gameObject.SetActive(true);
@@ -52,10 +52,10 @@ public class Edit_Active : MonoBehaviour
     public void editButten_UnActive()
     {
 
-        parent_canvars.GetChild(0).gameObject.SetActive(false);
-        parent_canvars.GetChild(1).gameObject.SetActive(true);
-        parent_canvars.GetChild(3).gameObject.SetActive(false);
-        parent_canvars.GetChild(6).gameObject.SetActive(true);
+        parent_canvars.GetChild(1).gameObject.SetActive(false);
+        parent_canvars.GetChild(2).gameObject.SetActive(true);
+        parent_canvars.GetChild(4).gameObject.SetActive(false);
+        parent_canvars.GetChild(0).gameObject.SetActive(true);
 
         parent_selec.GetChild(0).gameObject.SetActive(false);
         parent_selec.GetChild(1).gameObject.SetActive(false);

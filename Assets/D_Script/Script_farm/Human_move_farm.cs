@@ -80,7 +80,7 @@ public class Human_move_farm : MonoBehaviour
     {
         pos_obj();
         my = gameObject;
-
+       
         savePoint = DataManager.instance.nowPoint.point.ToString();
         textPoint.text = savePoint;
 

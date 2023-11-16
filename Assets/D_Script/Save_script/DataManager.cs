@@ -6,13 +6,15 @@ using System.Runtime.InteropServices;
 using System.Drawing;
 using UnityEngine.UI;
 using UnityEngine.Device;
+using System.Threading;
 
 [System.Serializable]
+
 public class PointData
 {
     // 이름, 레벨, 코인, 착용중인 무기
     public string name = "Point";
-    public int point=-10000;
+    public int point = 0;
 
 
 }
@@ -25,6 +27,7 @@ public class RobbyDatas
 }
 
 [System.Serializable]
+
 public class RobbyData
 {
     // 이름, 레벨, 코인, 착용중인 무기
@@ -43,11 +46,12 @@ public class RobbyData
 }
 
 [System.Serializable]
+
 public class CoinData
 {
     // 이름, 레벨, 코인, 착용중인 무기
     public string name = "Coin";
-    public int coin=-10000;
+    public int coin = 0;
 
 }
 public class FoodData
@@ -84,13 +88,15 @@ public class DataManager : MonoBehaviour
 
 
 
-    // string path_Point; // 경로
-    string path_Point_; // 경로
-                        //  string path_Robby; // 경로
-    string path_Robby_; // 경로
-    string path_Coin_; // 경로
+    //// string path_Point; // 경로
+    //string path_Point_; // 경로
+    //                    //  string path_Robby; // 경로
+    //string path_Robby_; // 경로
+    //string path_Coin_; // 경로
     string path_; // 경로
-
+    public bool newNowRobby = false;
+    public bool newNowPoint = false;
+    public bool newNowCoin = false;
 
     //  public int nowSlot = 0; // 현재 슬롯번호
 
@@ -122,30 +128,55 @@ public class DataManager : MonoBehaviour
         //  path_Robby_ = "D:\\github\\SunMoon\\Assets\\Resourse"; // 경로 지정
         // path_Robby = "E:\\github\\SunMoon\\Assets\\Resourse"; // 경로 지정
         path_ = UnityEngine.Application.persistentDataPath; // 경로 지정
-      
-        path_Point_ = path_;
-        path_Robby_ = path_;
-        path_Coin_ = path_;
+
+        //path_Point_ = path_;
+        //path_Robby_ = path_;
+        //path_Coin_ = path_;
 
     }
+    private void Start()
+    {
+
+    }
+
+
+    public void newstart()
+    {
+        Debug.Log(1);
+        newNowRobby = true;
+        newNowPoint = true;
+        newNowCoin = true;
+        ClearDataRobby();
+        ClearDataPoint();
+        ClearDataCoin();
+        
+        Debug.Log("???");
+
+    }
+
+
     public void SaveDataPoint()
     {
 
 
         string pointData = JsonUtility.ToJson(nowPoint, true);
-        string path = Path.Combine(path_Point_, "SaveDataPoint.json");
+        string path = Path.Combine(path_, "SaveDataPoint.json");
         File.WriteAllText(path, pointData);
     }
     public void LoadDataPoint()
     {
 
-        string path = Path.Combine(path_Point_, "SaveDataPoint.json");
+        string path = Path.Combine(path_, "SaveDataPoint.json");
         string poinData = File.ReadAllText(path);
-        Debug.Log(path);
+
         nowPoint = JsonUtility.FromJson<PointData>(poinData);
     }
 
-
+    public void ClearDataPoint()
+    {
+        string path = Path.Combine(path_, "SaveDataPoint.json");
+        File.CreateText(path);
+    }
 
 
 
@@ -154,31 +185,35 @@ public class DataManager : MonoBehaviour
 
 
         string coinData = JsonUtility.ToJson(nowCoin, true);
-        string path = Path.Combine(path_Coin_, "SaveDataCoin.json");
+        string path = Path.Combine(path_, "SaveDataCoin.json");
         File.WriteAllText(path, coinData);
     }
     public void LoadDataCoin()
     {
-
-
-        string path = Path.Combine(path_Coin_, "SaveDataCoin.json");
+        string path = Path.Combine(path_, "SaveDataCoin.json");
         string coinData = File.ReadAllText(path);
 
         nowCoin = JsonUtility.FromJson<CoinData>(coinData);
     }
-
+    public void ClearDataCoin()
+    {
+        string path = Path.Combine(path_, "SaveDataCoin.json");
+        File.CreateText(path);
+    }
 
 
     public void SaveDataRobby()
     {
         string robbyData = JsonUtility.ToJson(robbyDatas, true);
-        string path = Path.Combine(path_Robby_, "SaveDataRobby.json");
+        string path = Path.Combine(path_, "SaveDataRobby.json");
+        Debug.Log(path);
+
         File.WriteAllText(path, robbyData);
     }
 
     public void LoadDataRobby()
     {
-        string path = Path.Combine(path_Robby_, "SaveDataRobby.json");
+        string path = Path.Combine(path_, "SaveDataRobby.json");
         string robbyData = File.ReadAllText(path);
 
         //Debug.Log(robbyData);
@@ -226,5 +261,10 @@ public class DataManager : MonoBehaviour
         //    robbyList[a] = nowRobby;
         //}
 
+    }
+    public void ClearDataRobby()
+    {
+        string path = Path.Combine(path_, "SaveDataRobby.json");
+        File.CreateText(path);
     }
 }

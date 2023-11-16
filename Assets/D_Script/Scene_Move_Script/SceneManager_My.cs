@@ -28,12 +28,14 @@ public class SceneManager_My : MonoBehaviour
     }
     public void LoadScene()
     {
-        
+    
         PlayerPrefs.SetInt("next", next);
         SceneManager.LoadScene(0);
-   
 
-        
-   
+
+
+
     }
+
+   
 }

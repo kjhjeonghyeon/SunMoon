@@ -175,6 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6763817875566007764}
+  - component: {fileID: 1504598166585910641}
   - component: {fileID: 4021885604899582535}
   - component: {fileID: 2310981597051491664}
   - component: {fileID: 2996165853348034259}
@@ -186,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6763817875566007764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -203,13 +204,26 @@ RectTransform:
   - {fileID: 3168999597912103}
   - {fileID: 3906444435528706627}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1504598166585910641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251373832059853476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfbd32e408d7e44419fd39ef72d8079e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goScene: 4
 --- !u!33 &4021885604899582535
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -321,7 +335,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
 --- !u!1 &7490982294103368426
 GameObject:
   m_ObjectHideFlags: 0

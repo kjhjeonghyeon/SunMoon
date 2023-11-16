@@ -23,16 +23,16 @@ public class BuySystem : MonoBehaviour
 
     public void Buy_Active_Button()
     {
-        parent_canvars.GetChild(0).gameObject.SetActive(false);
         parent_canvars.GetChild(1).gameObject.SetActive(false);
-        parent_canvars.GetChild(2).gameObject.SetActive(true);
+        parent_canvars.GetChild(2).gameObject.SetActive(false);
+        parent_canvars.GetChild(3).gameObject.SetActive(true);
 
     }
     public void Buy_Active_Button_UnActive()
     {
-        parent_canvars.GetChild(0).gameObject.SetActive(true);
         parent_canvars.GetChild(1).gameObject.SetActive(true);
-        parent_canvars.GetChild(2).gameObject.SetActive(false);
+        parent_canvars.GetChild(2).gameObject.SetActive(true);
+        parent_canvars.GetChild(3).gameObject.SetActive(false);
 
     }
 

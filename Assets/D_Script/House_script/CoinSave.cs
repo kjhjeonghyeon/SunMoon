@@ -6,28 +6,33 @@ using System.Threading;
 using UnityEngine;
 
 public class CoinSave : MonoBehaviour
-{
+{ float count = 0;
     void Awake()
     {
     }
     private void Start()
     {
-        if (DataManager.instance.nowCoin.coin == -10000)
+        if (DataManager.instance.newNowCoin ==true)
+        {
+            DataManager.instance.SaveDataCoin();
+
+            DataManager.instance.nowCoin.coin = 0;
+
+
+        }
+        if (DataManager.instance.newNowCoin == false)
         {
 
-            DataManager.instance.SaveDataCoin();
-            DataManager.instance.nowCoin.coin = 0;
+            DataManager.instance.LoadDataCoin();
         }
-
-        DataManager.instance.LoadDataCoin();
        
     }
     // Update is called once per frame
     void Update()
     {
-
-
-
+        count += Time.deltaTime;
+        //DataManager.instance.newNowRobby = false;
+        if(count%1==0)
         StartCoroutine(turm());
 
     }
@@ -36,8 +41,9 @@ public class CoinSave : MonoBehaviour
     {
         yield return null;
         DataManager.instance.SaveDataCoin();
-        yield return new WaitForSeconds(1f);
-
+      //  yield return new WaitForSeconds(3f);
+        yield return null;
+        DataManager.instance.newNowCoin = false;
         DataManager.instance.LoadDataCoin();
 
     }

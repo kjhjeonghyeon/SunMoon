@@ -7,27 +7,36 @@ using UnityEngine;
 
 public class pointSave : MonoBehaviour
 {
+    float count;
     // Start is called before the first frame update
     void Awake()
     {
     }
     private void Start()
     {
-        if (DataManager.instance.nowPoint.point == -10000)
+        if (DataManager.instance.newNowPoint == true)
         {
+
             DataManager.instance.SaveDataPoint();
             DataManager.instance.nowPoint.point = 0;
-        }
 
-        DataManager.instance.LoadDataPoint();
+
+        }
+        if (DataManager.instance.newNowPoint == false)
+
+            DataManager.instance.LoadDataPoint();
     }
+
     // Update is called once per frame
     void Update()
     {
-
-            
-     
+        count += Time.deltaTime;
+        //DataManager.instance.newNowRobby = false;
+        if (count % 1 == 0)
             StartCoroutine(turm());
+
+
+
 
     }
 
@@ -35,10 +44,11 @@ public class pointSave : MonoBehaviour
     {
         yield return null;
         DataManager.instance.SaveDataPoint();
-        yield return new WaitForSeconds(1f);
-        
-       
+       // yield return new WaitForSeconds(3f);
+        yield return null;
+
         DataManager.instance.LoadDataPoint();
-       
+        DataManager.instance.newNowPoint = false;
+
     }
 }

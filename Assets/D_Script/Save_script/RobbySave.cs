@@ -12,11 +12,30 @@ public class RobbySave : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+      
 
     }
     private void Start()
     {
-        Load();
+        Debug.Log(DataManager.instance.newNowRobby);
+        if (DataManager.instance.newNowRobby == true)
+        {
+         
+            Save();
+            //DataManager.instance.robbyDatas.robbyData[0].hexname = hex.transform.GetChild(0).gameObject.name.ToString();
+            //DataManager.instance.robbyDatas.robbyData[0].position = hex.transform.GetChild(0).position;
+            //DataManager.instance.robbyDatas.robbyData[0].ative = hex.transform.GetChild(0).gameObject.activeSelf;
+        }
+        //if (DataManager.instance.robbyDatas.robbyData[0].position==new Vector3(0,0,0))
+        //{
+        //    Debug.Log(0);
+        //    Save();
+        //}
+      if(DataManager.instance.newNowRobby == false)
+        {
+
+           Load();
+        }
 
         //DataManager.instance.LoadDataRobby();
         //Invoke("LoadDataRobby", 2f);
@@ -47,9 +66,9 @@ public class RobbySave : MonoBehaviour
 
         for (int i = 0; i < hex.transform.childCount; i++)
         {
-           
 
 
+          
             DataManager.instance.robbyDatas.robbyData[i].hexname = hex.transform.GetChild(i).gameObject.name.ToString();
             DataManager.instance.robbyDatas.robbyData[i].position = hex.transform.GetChild(i).position;
             DataManager.instance.robbyDatas.robbyData[i].ative = hex.transform.GetChild(i).gameObject.activeSelf;
@@ -62,10 +81,11 @@ public class RobbySave : MonoBehaviour
 
     IEnumerator turm()
     {
-
         yield return null;
         DataManager.instance.SaveDataRobby();
-
+        yield return new WaitForSeconds(3f);
+        Debug.Log(DataManager.instance.newNowRobby);
+        DataManager.instance.newNowRobby = false;
 
 
 

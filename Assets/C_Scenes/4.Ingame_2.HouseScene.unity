@@ -10812,6 +10812,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347687437}
   m_Mesh: {fileID: -5333006949047009122, guid: 02ad78cca7f19f843b49a2e580791919, type: 3}
+--- !u!1 &1352656165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1352656168}
+  - component: {fileID: 1352656167}
+  - component: {fileID: 1352656166}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1352656166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352656165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f5dd5603195e540978fe36fd286dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1352656167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352656165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c5e47cfb0904d4895ea6d5b4cab796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1352656168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352656165}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1550, y: 233, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1373681563
 GameObject:
   m_ObjectHideFlags: 0
@@ -16531,18 +16588,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2620529652629475355, guid: 6c83ea4e34ca7a248a5e3e1ac4936b54,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8055290248309084168}
-    - targetCorrespondingSourceObject: {fileID: 2620529652629475355, guid: 6c83ea4e34ca7a248a5e3e1ac4936b54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8055290248309084165}
-    - targetCorrespondingSourceObject: {fileID: 2620529652629475355, guid: 6c83ea4e34ca7a248a5e3e1ac4936b54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8055290248309084166}
-    - targetCorrespondingSourceObject: {fileID: 2620529652629475355, guid: 6c83ea4e34ca7a248a5e3e1ac4936b54,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8055290248309084169}
   m_SourcePrefab: {fileID: 100100000, guid: 6c83ea4e34ca7a248a5e3e1ac4936b54, type: 3}
 --- !u!1 &8055290248309084158 stripped
@@ -16623,50 +16668,6 @@ MonoBehaviour:
   cooking: {fileID: 1373681565}
   textPoint: {fileID: 1857424612}
   textCoin: {fileID: 746864146}
---- !u!114 &8055290248309084165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8055290248309084158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49c5e47cfb0904d4895ea6d5b4cab796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8055290248309084166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8055290248309084158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f5dd5603195e540978fe36fd286dce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8055290248309084168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8055290248309084158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 701e6002c303b804185c43ecd43758a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nowPoint:
-    name: Point
-    point: 0
-  nowCoin:
-    name: Coin
-    coin: 0
-  robbyDatas:
-    robbyData: []
 --- !u!114 &8055290248309084169
 MonoBehaviour:
   m_ObjectHideFlags: 0
